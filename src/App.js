@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import UserDetails from './components/user-details';
+import moment from 'moment';
 
 const user = {
   forename: 'Peter',
   surname: 'Swift',
   nationality: 'British',
+  dob: moment().subtract(22, 'year').subtract(4, 'month').subtract(21, 'day'),
 };
 
 class App extends Component {

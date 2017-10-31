@@ -1,11 +1,13 @@
 import React from 'react';
 import UserDetails from '.';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import moment from 'moment';
 
 const user = {
   forename: 'Peter',
   surname: 'Swift',
   nationality: 'British',
+  dob: moment().subtract(22, 'year').subtract(4, 'month').subtract(21, 'day'),
 };
 
 test('UserDetails renders full name', () => {
@@ -24,3 +26,10 @@ test('UserDetails renders nationality', () => {
   expect(component.find('.user-nationality').text()).toEqual(user.nationality);
 });
 
+test('UserDetails renders age', () => {
+  const component = mount(
+    <UserDetails user={user} />
+  );
+
+  expect(component.find('.user-age').text()).toEqual('22 years old');
+});
