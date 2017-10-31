@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import UserDetails from './components/user-details';
+import UserList from './components/user-list';
 import moment from 'moment';
 
 const user = {
@@ -13,8 +13,8 @@ const user = {
 class App extends Component {
   render() {
     return (
-      <div className="App pt-dark">
-        <UserDetails user={user}/>
+      <div className="App">
+        <UserList users={[user]}/>
       </div>
     );
   }
