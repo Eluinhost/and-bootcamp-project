@@ -6,6 +6,7 @@ import UserDetails from './components/user-details';
 const user = {
   forename: 'Peter',
   surname: 'Swift',
+  nationality: 'British',
 };
 
 class App extends Component {

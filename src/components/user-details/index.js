@@ -6,6 +6,7 @@ export default class UserDetails extends React.PureComponent {
     user: PropTypes.shape({
       forename: PropTypes.string.isRequired,
       surname: PropTypes.string.isRequired,
+      nationality: PropTypes.string.isRequired,
     }).isRequired,
   };
 
@@ -13,6 +14,7 @@ export default class UserDetails extends React.PureComponent {
     return (
       <div>
         <h1 className="user-full-name">{this.props.user.forename} {this.props.user.surname}</h1>
+        <div className="user-nationality">{this.props.user.nationality}</div>
       </div>
     )
   }
