@@ -1,16 +1,10 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import moment from 'moment';
 import YearsFromNow from '../years-from-now';
+import UserDetailsPropTypes from '../../prop-types/UserDetailsPropTypes';
 
 export default class UserDetails extends React.PureComponent {
   static propTypes = {
-    user: PropTypes.shape({
-      forename: PropTypes.string.isRequired,
-      surname: PropTypes.string.isRequired,
-      nationality: PropTypes.string.isRequired,
-      dob: PropTypes.instanceOf(moment).isRequired,
-    }).isRequired,
+    user: UserDetailsPropTypes.isRequired,
   };
 
   render() {
