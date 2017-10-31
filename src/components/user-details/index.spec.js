@@ -23,7 +23,7 @@ test('UserDetails renders nationality', () => {
     <UserDetails user={user} />
   );
 
-  expect(component.find('.user-nationality').text()).toEqual(user.nationality);
+  expect(component.find('.user-nationality').text()).toEqual(`Nationality: ${user.nationality}`);
 });
 
 test('UserDetails renders age', () => {
@@ -31,5 +31,5 @@ test('UserDetails renders age', () => {
     <UserDetails user={user} />
   );
 
-  expect(component.find('.user-age').text()).toEqual('22 years old');
+  expect(component.find('.user-age').text()).toEqual(`Age: 22 years old`);
 });
