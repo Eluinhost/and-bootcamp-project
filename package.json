@@ -6,10 +6,7 @@
     "@blueprintjs/core": "^1.32.0",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.2",
-    "koa": "^2.3.0",
     "moment": "^2.19.1",
-    "node-pg-migrate": "^2.13.1",
-    "pg": "^7.3.0",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-addons-css-transition-group": "^15.6.2",
@@ -22,9 +19,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "migration:create": "pg-migrate create",
-    "migration:up": "pg-migrate up",
-    "migration:down": "pg-migrate down"
+    "eject": "react-scripts eject"
   }
 }
