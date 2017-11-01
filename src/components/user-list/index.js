@@ -17,15 +17,15 @@ export default class UserList extends React.PureComponent {
     }
 
     const items = this.props.users.map((user, index) => (
-      <li key={index}>
+      <div className="pt-card" key={index}>
         <UserListRow user={user}/>
-      </li>
+      </div>
     ));
 
     return (
-      <ul>
+      <div>
         {items}
-      </ul>
+      </div>
     )
   }
 }
