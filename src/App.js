@@ -1,24 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import UserList from './components/user-list';
-import moment from 'moment';
 import AsyncLoader from "./components/async-loader";
 import {fetchUsers} from "./api";
-
-const users = [
-  {
-    forename: 'Peter',
-    surname: 'Swift',
-    nationality: 'British',
-    dob: moment().subtract(22, 'year').subtract(4, 'month').subtract(21, 'day'),
-  },
-  {
-    forename: 'Phil',
-    surname: 'Potts',
-    nationality: 'British',
-    dob: moment().subtract(32, 'year'),
-  },
-];
 
 const f = () =>
   fetchUsers()
@@ -29,8 +13,11 @@ const f = () =>
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <AsyncLoader load={f} render={data => <UserList users={data}/>}/>
+      <div className="app pt-dark">
+        <h1>All Users</h1>
+        <div className="app-all-users">
+          <AsyncLoader load={f} render={data => <UserList users={data}/>}/>
+        </div>
       </div>
     );
   }

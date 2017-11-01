@@ -21,7 +21,7 @@ export default class UserListRow extends React.PureComponent {
     return (
       <div className="user-list-row" onClick={this.onClick}>
         <span className="user-list-row--name">{fullName}</span>
-        <Dialog isOpen={this.state.isOpen} title="User Details" onClose={this.onDialogClose}>
+        <Dialog isOpen={this.state.isOpen} title="User Details" onClose={this.onDialogClose} className="pt-dark">
           <div className="pt-dialog-body">
             <UserDetails user={this.props.user}/>
           </div>

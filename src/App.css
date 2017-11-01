@@ -1,0 +1,15 @@
+html, body {
+  min-height: 100%;
+  background: #202B33;
+}
+
+.app {
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.app-all-users {
+  margin-top: 20px;
+}
