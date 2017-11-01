@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {NonIdealState, Spinner} from "@blueprintjs/core";
+import {NonIdealState, Spinner, Button, Intent} from "@blueprintjs/core";
 
 class AsyncLoader extends React.PureComponent {
   static propTypes = {
@@ -35,16 +35,38 @@ class AsyncLoader extends React.PureComponent {
     }
   };
 
+  renderRefreshButton = () =>
+    <Button
+      onClick={this._refresh}
+      iconName="refresh"
+      intent={Intent.SUCCESS}
+    >
+      Refresh
+    </Button>;
+
   render() {
     if (this.state.error) {
-      return <NonIdealState visual="warning-sign" title="Unable to fetch data" />;
+      return (
+        <NonIdealState
+          visual="warning-sign"
+          title="Unable to fetch data"
+          action={this.renderRefreshButton()}
+        />
+      );
     }
 
     if (this.state.isLoading) {
       return <NonIdealState visual={<Spinner />} title="Loading..." />;
     }
 
-    return this.props.render(this.state.data);
+    return (
+      <div>
+        {this.props.render(this.state.data)}
+        <div>
+          <Button onClick={this._refresh} iconName="refresh" intent={Intent.SUCCESS}>Refresh</Button>
+        </div>
+      </div>
+    );
   }
 }
 
