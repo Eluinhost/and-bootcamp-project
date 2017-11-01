@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import UserList from './components/user-list';
 import moment from 'moment';
+import AsyncLoader from "./components/async-loader";
+import {fetchUsers} from "./api";
 
 const users = [
   {
@@ -18,11 +20,17 @@ const users = [
   },
 ];
 
+const f = () =>
+  fetchUsers()
+    .then((res) => new Promise((resolve, reject) => {
+      window.setTimeout(() => resolve(res), 3000);
+    }));
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <UserList users={users}/>
+        <AsyncLoader load={f} render={data => <UserList users={data}/>}/>
       </div>
     );
   }
