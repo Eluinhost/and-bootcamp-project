@@ -1,10 +1,7 @@
 import * as React from 'react';
 import UserDetailsPropTypes from '../../prop-types/UserDetailsPropTypes';
-import PropTypes from 'prop-types'
 import UserDetails from '../user-details';
-import YearsFromNow from '../years-from-now';
 import { Dialog } from '@blueprintjs/core';
-
 
 export default class UserListRow extends React.PureComponent {
   state = {
